@@ -27,7 +27,7 @@ Windows 桌面监控面板，实时查看 **Cursor Agent** 与 **Claude Code CLI
 
 ### 下载
 
-在 [GitHub Releases](https://github.com/guochao99/agent-status/releases) 下载：
+在 [GitHub Releases](https://github.com/gc0106/agent-status/releases) 下载：
 
 | 文件 | 说明 |
 |------|------|
@@ -37,7 +37,7 @@ Windows 桌面监控面板，实时查看 **Cursor Agent** 与 **Claude Code CLI
 ### 从源码运行
 
 ```powershell
-git clone https://github.com/guochao99/agent-status.git
+git clone https://github.com/gc0106/agent-status.git
 cd agent-status
 npm install
 npm run electron:dev
@@ -93,7 +93,7 @@ agent-status/
 ### Quick start
 
 ```bash
-git clone https://github.com/guochao99/agent-status.git
+git clone https://github.com/gc0106/agent-status.git
 cd agent-status
 npm install
 npm run electron:dev
@@ -106,6 +106,6 @@ $env:ELECTRON_MIRROR='https://npmmirror.com/mirrors/electron/'
 npm run pack:clean
 ```
 
-See [Releases](https://github.com/guochao99/agent-status/releases) for pre-built binaries.
+See [Releases](https://github.com/gc0106/agent-status/releases) for pre-built binaries.
 
 MIT License — see [LICENSE](LICENSE).

@@ -2,7 +2,7 @@
   "name": "agent-status",
   "version": "0.2.3",
   "description": "Windows desktop monitor for Cursor Agent and Claude Code CLI sessions",
-  "author": "guochao99",
+  "author": "gc0106",
   "license": "MIT",
   "keywords": [
     "cursor",
@@ -15,12 +15,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/guochao99/agent-status.git"
+    "url": "https://github.com/gc0106/agent-status.git"
   },
   "bugs": {
-    "url": "https://github.com/guochao99/agent-status/issues"
+    "url": "https://github.com/gc0106/agent-status/issues"
   },
-  "homepage": "https://github.com/guochao99/agent-status#readme",
+  "homepage": "https://github.com/gc0106/agent-status#readme",
   "main": "dist-electron/electron/main.js",
   "scripts": {
     "dev": "vite",
