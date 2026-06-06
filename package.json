@@ -1,0 +1,98 @@
+{
+  "name": "agent-status",
+  "version": "0.2.3",
+  "description": "Windows desktop monitor for Cursor Agent and Claude Code CLI sessions",
+  "author": "guochao99",
+  "license": "MIT",
+  "keywords": [
+    "cursor",
+    "claude-code",
+    "agent",
+    "electron",
+    "windows",
+    "monitor",
+    "herdr"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/guochao99/agent-status.git"
+  },
+  "bugs": {
+    "url": "https://github.com/guochao99/agent-status/issues"
+  },
+  "homepage": "https://github.com/guochao99/agent-status#readme",
+  "main": "dist-electron/electron/main.js",
+  "scripts": {
+    "dev": "vite",
+    "electron:build": "tsc -p tsconfig.electron.json",
+    "postinstall": "node -e \"try{require('electron/install')}catch(e){process.exit(0)}\"",
+    "build": "tsc -p tsconfig.node.json && vite build && npm run electron:build",
+    "preview": "vite preview",
+    "start": "electron .",
+    "pack": "npm run build && electron-builder --win",
+    "pack:clean": "node scripts/clean-release.mjs && npm run pack",
+    "pack:dir": "npm run build && electron-builder --win --dir",
+    "electron:dev": "npm run electron:build && concurrently -k \"vite\" \"tsc -p tsconfig.electron.json --watch\" \"wait-on http://localhost:5173 && cross-env VITE_DEV_SERVER_URL=http://localhost:5173 electron .\"",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.electron.json --noEmit"
+  },
+  "dependencies": {
+    "chokidar": "^4.0.3",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.21",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "@vitejs/plugin-react": "^4.4.1",
+    "concurrently": "^9.1.2",
+    "cross-env": "^7.0.3",
+    "electron": "^36.2.0",
+    "electron-builder": "^26.15.0",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5",
+    "wait-on": "^8.0.3"
+  },
+  "build": {
+    "appId": "com.agentstatus.app",
+    "productName": "Agent Status",
+    "copyright": "Copyright © 2026",
+    "directories": {
+      "output": "release",
+      "buildResources": "build"
+    },
+    "files": [
+      "dist/**/*",
+      "dist-electron/**/*",
+      "package.json"
+    ],
+    "asar": true,
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "artifactName": "${productName}-${version}-${os}-${arch}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Agent Status"
+    },
+    "portable": {
+      "artifactName": "${productName}-${version}-Portable.${ext}"
+    }
+  }
+}
