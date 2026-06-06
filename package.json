@@ -1,6 +1,6 @@
 {
   "name": "agent-status",
-  "version": "0.2.3",
+  "version": "1.0.0",
   "description": "Windows desktop monitor for Cursor Agent and Claude Code CLI sessions",
   "author": "gc0106",
   "license": "MIT",

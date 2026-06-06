@@ -27,7 +27,7 @@ Windows 桌面监控面板，实时查看 **Cursor Agent** 与 **Claude Code CLI
 
 ### 下载
 
-在 [GitHub Releases](https://github.com/gc0106/agent-status/releases) 下载：
+在 [GitHub Releases](https://github.com/gc0106/agent-status/releases/latest) 下载最新稳定版 **v1.0.0**：
 
 | 文件 | 说明 |
 |------|------|
