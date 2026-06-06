@@ -23,6 +23,8 @@ jobs:
         run: npm ci
 
       - name: Build installers
+        env:
+          ELECTRON_MIRROR: https://npmmirror.com/mirrors/electron/
         run: npm run pack
 
       - name: Upload release assets
